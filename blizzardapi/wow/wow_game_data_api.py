@@ -72,6 +72,12 @@ class WowGameDataApi(Api):
         query_params = {"namespace": f"dynamic-{region}", "locale": locale}
         return super().get_resource(resource, region, query_params)
 
+    def get_commodities(self, region, locale):
+        """Return all active commodites auctions for a region."""
+        resource = "/data/wow/auctions/commodities"
+        query_params = {"namespace": f"dynamic-{region}", "locale": locale}
+        return super().get_resource(resource, region, query_params)
+
     # Azerite Essence API
 
     def get_azerite_essences_index(self, region, locale):
